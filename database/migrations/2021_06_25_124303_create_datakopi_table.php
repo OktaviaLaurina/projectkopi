@@ -15,10 +15,10 @@ class CreateDatakopiTable extends Migration
     {
         Schema::create('datakopi', function (Blueprint $table) {
             $table->id();
-            $table->string('NamaKopi');
-            $table->string('Ketersediaan');
-            $table->string('Harga');
-            $table->string('Gambar');
+            $table->string('namakopi');
+            $table->string('ketersediaan');
+            $table->string('harga');
+            $table->string('gambar')->nullable()->default(null);
             $table->timestamps();
         });
     }

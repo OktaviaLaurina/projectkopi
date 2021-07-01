@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Datakopi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -28,24 +30,20 @@ class HomeController extends Controller
 
     public function datacreate(Request $request)
     {
-        $create = new Datakopi;
+        $gambar = null; 
 
-        $create->NamaKopi = $request->input('namakopi');
-        $create->Ketersediaan = $request->input('ketersediaan');
-        $create->Harga = $request->input('harga');
+       if ($request->hasFile('gambar'))
+           $gambar = $request->file('gambar')->store('assets/gambar');
+           
+           Datakopi::create([
+               'NamaKopi' => $request->namakopi,
+               'Ketersediaan' => $request->ketersediaan,
+               'Harga' => $request->harga,
+               'Gambar' => $gambar
 
-        if ($request->hasFile('gambar')) {
-            $file = $request->file('gambar');
-            $extension = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $extension;
-            $file->move('img', $filename);
-            $create->gambar = $filename;
-        }else {
-            return $request;
-            $create->gambar;
-        }
+           ]);
+           
 
-        $create->save();
         Alert::success('Success Title', 'Data berhasil ditambah');
         return redirect()->route('admin.datakopi');
 
@@ -54,5 +52,35 @@ class HomeController extends Controller
     public function edit(Datakopi $datas)
     {
         return view('halaman-admin.users.edit', compact('datas'));
+    }
+
+    public function dataupdate(Request $request, Datakopi $datas)
+    {
+      
+        $gambar = $datas->gambar;
+
+        if ($request->hasFile('gambar')){
+            Storage::delete($datas->gambar);
+            $gambar = $request->file('gambar')->store('assets/gambar');
+        }
+
+            $datas->update([
+                'namaKopi' => $request->namakopi,
+                'ketersediaan' => $request->ketersediaan,
+                'harga' => $request->harga,
+                'gambar' => $gambar
+            ]);
+            
+ 
+         Alert::success('Success Title', 'Data berhasil di edit');
+         return redirect()->route('admin.datakopi');
+    }
+
+    public function datadelete(Datakopi $datas)
+    {
+        DB::table('datakopi')->delete($datas->id);
+
+        Alert::success('Success Title', 'Data berhasil di delete');
+        return redirect()->route('admin.datakopi');
     }
 }
