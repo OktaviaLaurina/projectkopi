@@ -76,9 +76,10 @@ class HomeController extends Controller
          return redirect()->route('admin.datakopi');
     }
 
-    public function datadelete(Datakopi $datas)
+    public function datadelete($datas)
     {
-        DB::table('datakopi')->delete($datas->id);
+        $oke = DB::table('datakopi')->where('id', $datas);
+        dd($oke);
 
         Alert::success('Success Title', 'Data berhasil di delete');
         return redirect()->route('admin.datakopi');
