@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    
     @include('halaman-admin.tamplate.partials.head')
 
-<body>
-    @include('sweetalert::alert')
 
+<body>
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -14,13 +14,14 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         @include('halaman-admin.tamplate.partials.header')
+        
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-       @include('halaman-admin.tamplate.partials.sidebar')
+        @include('halaman-admin.tamplate.partials.sidebar')
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -34,7 +35,21 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Prediksi Kopi</h4>
+                        <h4 class="page-title">Dashboard</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="text-end upgrade-btn">
+                            <a href="https://www.wrappixel.com/templates/xtremeadmin/" class="btn btn-danger text-white"
+                                target="_blank">Upgrade to Pro</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,18 +60,11 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-               @yield('content')
+                @yield('content')
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-           @include('halaman-admin.tamplate.partials.footer')
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
+            @include('halaman-admin.tamplate.partials.footer')
+            
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
@@ -68,7 +76,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    @include('halaman-admin.tamplate.partials.scripts')
+    
     @include('halaman-admin.tamplate.partials.scripts')
 </body>
 

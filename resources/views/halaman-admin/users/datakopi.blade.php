@@ -1,4 +1,4 @@
-@extends('halaman-admin.tamplate.default')
+@extends('halaman-admin.tamplate.index')
 
 @section('content')
     
@@ -33,36 +33,11 @@
         <td>
             <div class="d-grid gap-2 d-md-block">
                 <a href="edit/{{$datas->id}}" class="btn btn-warning" >edit</a>
-                <!-- Button trigger modal -->
-                <form action="delete/{{$datas->id}}" method="post">
-                  @csrf
-                  @method('delete')
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                    delete
+                <a href="{{route('admin.datadelete', $datas->id)}}">
+                  <button type="button" onClick="return konfirmasi()" class="btn btn-danger btn-sm">
+                    Hapus
                   </button>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          Yakin ingin hapus..??
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-danger">Delete</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                </a>
                 
 
             </div>
@@ -73,3 +48,14 @@
     </tbody>
   </table>
 @endsection
+
+<script>
+  function konfirmasi () {
+    var pilihan = confirm('Apakah Anda Yakin?')
+    if (pilihan) {
+      return true
+    } else{
+      return false
+    }
+  }
+</script>
