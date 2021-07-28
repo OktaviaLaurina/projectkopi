@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Datakopi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return view ('user.index');
+        $data = Datakopi::all();
+        return view ('user.index', compact('data'));
     }
 }

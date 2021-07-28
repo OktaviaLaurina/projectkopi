@@ -23,3 +23,5 @@ Route::get('/home', 'User\HomeController@home')->name('home')->middleware('verif
 
 Route::get('/tambahdata', 'HomeController@tambahdata');
 
+Route::get('/detail/{datas}', 'User\CekoutController@detail')->name('detail');
+
