@@ -20,6 +20,7 @@ class HomeController extends Controller
     public function datakopi()
     {
         $data = Datakopi::all();
+        dd($data);
         return view ('halaman-admin.users.datakopi', compact('data'));
     }
 
