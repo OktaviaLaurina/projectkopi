@@ -31,7 +31,7 @@
                         <p class="card-text">{{$datas->deskripsi}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                          <a href="{{route('detail', $datas->id)}}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                          <a href="{{route('detail', $datas->id)}}" class="btn btn-sm btn-outline-secondary">Beli Sekarang</a>
                           {{-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> --}}
                         </div>
                           <small class="text-muted">Harga:  Rp.{{$datas->harga}}</small>
