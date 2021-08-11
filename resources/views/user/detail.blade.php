@@ -34,7 +34,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 order-md-2 mb-4">
+    {{-- <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
         <span class="badge badge-secondary badge-pill">3</span>
@@ -82,7 +82,7 @@
           </div>
         </div>
       </form>
-    </div>
+    </div> --}}
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing Pemesan</h4>
       <form action="" method="POST" class="needs-validation" novalidate>
@@ -136,7 +136,30 @@
             <label for="state">Jumlah</label>
             <div class="">
               <div class="input-group quantity">
-                <input type="number" class="qty-input form-control" min="1" max="10" value="1">
+                <input type="number" name="jumlah" class="qty-input form-control" min="1" max="10"  value="1">
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3 my-3">
+            <label for="state">Total</label>
+            <div class="">
+              <div class="input-group quantity">
+                <input type="text" name="total" class="qty-input form-control" readonly  value="25000">
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="">
+              <div class="input-group quantity my-5">
+                <button type="submit" class="btn btn-secondary">
+                  <i class="far fa-cart-plus"></i> Masukan Keranjang
+                </button>
               </div>
             </div>
             <div class="invalid-feedback">

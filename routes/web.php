@@ -25,3 +25,5 @@ Route::get('/tambahdata', 'HomeController@tambahdata');
 
 Route::get('/detail/{datas}', 'User\CekoutController@detail')->name('detail');
 
+Route::post('/detail/{datas}', 'User\CekoutController@postcart')->name('detail');
+

@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $data = Datakopi::all();
+        $data = Datakopi::paginate(6);
         return view ('user.index', compact('data'));
     }
 }

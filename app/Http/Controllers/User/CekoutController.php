@@ -12,4 +12,15 @@ class CekoutController extends Controller
     {
        return view ('user.detail', compact('datas'));
     }
+
+    public function postcart(Request $request)
+    {
+        Datakopi::create([
+            'NamaKopi' => $request->namakopi,
+            'Ketersediaan' => $request->ketersediaan,
+            'Harga' => $request->harga,
+            'Gambar' => $gambar
+
+        ]);
+    }
 }

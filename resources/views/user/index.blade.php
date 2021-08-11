@@ -28,7 +28,7 @@
                       </a>
                       <div class="card-body">
                         <p class="lead text-muted">{{$datas->namakopi}}</p>
-                        <p class="card-text">{{$datas->deskripsi}}</p>
+                        <p class="card-text">{{Str::limit($datas->deskripsi, 100)}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <a href="{{route('detail', $datas->id)}}" class="btn btn-sm btn-outline-secondary">Beli Sekarang</a>
@@ -39,10 +39,10 @@
                       </div>
                   </div>
               </div>
-            @endforeach
+            @endforeach 
+          </div>
         </div>
       </div>
-    </div>
-  
-  </main>
+      {{$data->links('vendor.pagination.materialize')}}   
+    </main>
 @endsection
