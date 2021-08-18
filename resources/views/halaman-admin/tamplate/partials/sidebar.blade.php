@@ -36,6 +36,13 @@
                         <span class="hide-menu">Data Kopi</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{route('admin.adminDataTransaksi')}}" aria-expanded="false">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span class="hide-menu">Data Transaksi</span>
+                    </a>
+                </li>
             </ul>
 
         </nav>

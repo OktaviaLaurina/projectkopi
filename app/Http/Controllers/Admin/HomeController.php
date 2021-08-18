@@ -39,6 +39,8 @@ class HomeController extends Controller
            Datakopi::create([
                'NamaKopi' => $request->namakopi,
                'Ketersediaan' => $request->ketersediaan,
+               'keterangan' => $request->keterangan,
+               'jenis' => $request->jenis,
                'Harga' => $request->harga,
                'Gambar' => $gambar
 
@@ -68,6 +70,8 @@ class HomeController extends Controller
             $datas->update([
                 'namaKopi' => $request->namakopi,
                 'ketersediaan' => $request->ketersediaan,
+                'keterangan' => $request->keterangan,
+                'jenis' => $request->jenis,
                 'harga' => $request->harga,
                 'gambar' => $gambar
             ]);
