@@ -36,6 +36,7 @@
         </td>
         <td>
             <div class="d-grid gap-2 d-md-block">
+              <a href="{{ route('admin.forcast', $datas->id) }}" class="btn btn-warning" >Forecast</a>
                 <a href="edit/{{$datas->id}}" class="btn btn-warning" >edit</a>
                 <a href="{{route('admin.datadelete', $datas->id)}}">
                   <button type="button" onClick="return konfirmasi()" class="btn btn-danger btn-sm">

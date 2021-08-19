@@ -29,9 +29,8 @@
                 <td>{{$datas->total}}</td>
                 <td>{{$datas->created_at}}</td>
                 <td>
-                    
                     @if($datas->status === 'Dikemas')
-                    <span class="badge badge-danger">{{$datas->status}}</span>
+                    <div class="text-danger">{{$datas->status}}</div>
                     @elseif ($datas->status === 'Dikirim')
                     <span class="badge badge-warning">{{$datas->status}}</span>
                     @else

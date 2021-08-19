@@ -14,9 +14,10 @@ class TransaksiController extends Controller
         return view('halaman-admin.users.Transaksi')->with(['data' => $data]);
     }
 
-    function detailTransaksi () {
-        $data = DetailTransaksi::join('datakopi', 'datakopi.id', '=', 'detail_transaksi.id_barang')->get();
-        $dataTransaksi = Transaksi::join('users', 'users.id', '=', 'transaksi.idPembeli')->first();
+    function detailTransaksi ($id) {
+        $data = DetailTransaksi::where('kodeResi', $id)->
+            join('datakopi', 'datakopi.id', '=', 'detail_transaksi.id_barang')->get();
+        $dataTransaksi = Transaksi::where('kodeResi', $id)->join('users', 'users.id', '=', 'transaksi.idPembeli')->first();
         return view('halaman-admin.users.detailtransaksi')->with(['data' => $data, 'dataTransaksi' => $dataTransaksi]);
     }
 

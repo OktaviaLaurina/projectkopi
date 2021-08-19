@@ -10,6 +10,7 @@ Route::get('/index', function(){
 })->name('index');
 
 Route::get('/datakopi', 'HomeController@datakopi')->name('datakopi');
+Route::get('/forecast/{id}', 'HomeController@forcast')->name('forcast');
 
 // data transaksi
 Route::get('/datatransaksi', 'TransaksiController@adminDataTransaksi')->name('adminDataTransaksi');
