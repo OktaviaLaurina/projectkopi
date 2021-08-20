@@ -10,7 +10,7 @@
 <title>Xtreme Admin Lite Template by WrapPixel</title>
 <link rel="canonical" href="https://www.wrappixel.com/templates/xtreme-admin-lite/" />
 <!-- Favicon icon -->
-<link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
 <!-- Custom CSS -->
 <link href="{{asset('assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
 <!-- Custom CSS -->
