@@ -2,7 +2,7 @@
 
 
 Route::get('/', function(){
-    return view('halaman-admin.tamplate.default');
+    return view('halaman-admin.users.dashboard');
 })->name('dashboard');
 
 Route::get('/index', function(){
@@ -10,6 +10,12 @@ Route::get('/index', function(){
 })->name('index');
 
 Route::get('/datakopi', 'HomeController@datakopi')->name('datakopi');
+Route::get('/forecast/{id}', 'HomeController@forcast')->name('forcast');
+
+// data transaksi
+Route::get('/datatransaksi', 'TransaksiController@adminDataTransaksi')->name('adminDataTransaksi');
+Route::get('/datatransaksi/{id}', 'TransaksiController@detailTransaksi')->name('adminDetailTransaksi');
+Route::get('/datatransaksi/konfirmasi/{id}', 'TransaksiController@konfirmasi')->name('adminKonfirmasiTransaksi');
 
 Route::get('/tambahdata', 'HomeController@tambahdata')->name('tambahdata');
 Route::post('/tambahdata', 'HomeController@datacreate')->name('datacreate');

@@ -13,6 +13,12 @@
 
             <label for="ketersediaan">Ketersediaan</label>
             <input type="text" name="ketersediaan" class="form-control" id="ketersediaan" value="{{$datas->ketersediaan}}">
+
+            <label for="keterangan">Keterangan</label>
+            <input type="text" name="keterangan" class="form-control" id="keterangan" value="{{$datas->keterangan}}">
+
+            <label for="jenis">Jenis</label>
+            <input type="text" name="jenis" class="form-control" id="jenis" value="{{$datas->jenis}}">
             
             <label for="harga">Harga</label>
             <input type="text" name="harga" class="form-control" id="harga" value="{{$datas->harga}}">

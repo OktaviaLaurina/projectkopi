@@ -14,16 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome2');
+})->name('welcome2');
  
 Auth::routes(['verify' => true ]);
 
-Route::get('/home', 'User\HomeController@home')->name('home')->middleware('verified');
+Route::get('/home', 'User\HomeController@home')->name('home');
 
 Route::get('/tambahdata', 'HomeController@tambahdata');
 
 Route::get('/detail/{datas}', 'User\CekoutController@detail')->name('detail');
 
 Route::post('/detail/{datas}', 'User\CekoutController@postcart')->name('detail');
+
+Route::get('/cekout', 'User\CekoutController@cekout')->name('cekout');
+Route::post('/cekout', 'User\CekoutController@cekoutpost')->name('cekoutpost');
+
+Route::get('/transaksi', 'User\TransaksiController@index')->name('indexTransaksi');
+Route::get('/transaksi/detail/{id}', 'User\TransaksiController@detail')->name('detailTransaksi');
+Route::get('/transaksi/konfirmasi/{id}', 'User\TransaksiController@konfirmasi')->name('konfirmasiTransaksi');
 
