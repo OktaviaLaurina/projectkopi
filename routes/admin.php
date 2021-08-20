@@ -2,7 +2,7 @@
 
 
 Route::get('/', function(){
-    return view('halaman-admin.tamplate.default');
+    return view('halaman-admin.users.dashboard');
 })->name('dashboard');
 
 Route::get('/index', function(){
