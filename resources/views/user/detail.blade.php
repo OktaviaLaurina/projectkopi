@@ -3,6 +3,7 @@
 @section('title', 'Index')
 
 @section('content')
+
 @include('sweetalert::alert')
 
     <style>
