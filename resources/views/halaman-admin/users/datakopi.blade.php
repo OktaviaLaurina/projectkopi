@@ -1,7 +1,8 @@
 @extends('halaman-admin.tamplate.index')
 
 @section('content')
-    
+
+@include('sweetalert::alert')
 <table class="table">
     <thead class="thead-dark">
       <tr>

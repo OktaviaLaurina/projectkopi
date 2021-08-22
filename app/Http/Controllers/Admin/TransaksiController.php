@@ -6,6 +6,7 @@ use App\DetailTransaksi;
 use App\Transaksi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TransaksiController extends Controller
 {
@@ -23,6 +24,7 @@ class TransaksiController extends Controller
 
     function konfirmasi ($id) {
         Transaksi::where('kodeResi', $id)->update(['status' => 'Dikirim']);
+        Alert::success('Success Title', 'Data berhasil Konfirmasi');
         return redirect()->route('admin.adminDataTransaksi');
     }
 }
